@@ -1,6 +1,6 @@
 pipeline{
     agent any
-    stages{
+    stages {
         stage("init"){
             steps {
                 sh "docker stop nodejs-project || true"
@@ -9,7 +9,7 @@ pipeline{
             }
 
 
-        stage("Build"){
+        stage("build"){
             steps {
                 sh "docker build -t nodejs-project:${BUILD_NUMBER} ."
                 }
