@@ -1,5 +1,5 @@
-FROM python:3.8
-COPY . .
+FROM node:14
+WORKDIR /app
 RUN pip install -r requirements.txt
 ENV YOUR_NAME rej
 EXPOSE 5500
