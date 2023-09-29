@@ -1,6 +1,7 @@
-FROM node:14
+FROM node:lastest
 WORKDIR /app
-RUN pip install -r requirements.txt
-ENV YOUR_NAME rej
-EXPOSE 5500
-ENTRYPOINT ["python" , "app.py"]
+COPY package*.json ./
+RUN npm install
+COPY . .
+EXPOSE 5000
+ENTRYPOINT ["npm" , "start"]
