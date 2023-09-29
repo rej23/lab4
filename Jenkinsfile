@@ -1,7 +1,7 @@
 pipeline{
     agent any
     stages{
-        stage("clean up"){
+        stage("init"){
             steps {
                 sh "docker rm -f \$(docker ps -aq) || true"
                 }
